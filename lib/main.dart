@@ -7,37 +7,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(
-            title: Text(
-              "My App",
-              style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+            backgroundColor: Colors.white,
+            appBar: AppBar(
+              title: Text(
+                "My App",
+                style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold),
+              ),
+              backgroundColor: Colors.grey,
             ),
-            backgroundColor: Colors.grey,
-          ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                  child: Container(
-                color: Colors.deepPurple,
-              )),
-              Expanded(
-                  flex: 3,
-                  child: Container(
-                    color: Colors.deepPurple[400],
-                  )),
-              Expanded(
-                  child: Container(
-                color: Colors.deepPurple[200],
-              ))
-            ],
-          )),
-    );
+            body: ListView(
+              scrollDirection: Axis.vertical,
+              children: [
+                Container(
+                  height: 250,
+                  color: Colors.deepPurple,
+                ),
+                Container(
+                  height: 350,
+                  color: Colors.deepPurple[400],
+                ),
+                Container(
+                  height: 350,
+                  color: Colors.deepPurple[200],
+                )
+              ],
+            )));
   }
 }
