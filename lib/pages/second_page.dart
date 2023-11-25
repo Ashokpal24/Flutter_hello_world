@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/pages/first_page.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
@@ -10,10 +9,7 @@ class SecondPage extends StatelessWidget {
       appBar: AppBar(title: Text("2nd page")),
       body: Center(
           child: ElevatedButton(
-        onPressed: () => {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => FirstPage()))
-        },
+        onPressed: () => {Navigator.pushNamed(context, './firstpage')},
         child: Text("First Page"),
         style: ElevatedButton.styleFrom(
             minimumSize: Size(128, 48),
