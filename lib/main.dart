@@ -11,14 +11,20 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text("My App Bar"),
-          backgroundColor: Colors.greenAccent,
+          title: Text(
+            "My App",
+            style: TextStyle(
+                color: Colors.white70,
+                fontSize: 32,
+                fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Colors.grey,
         ),
         body: Center(
             child: Container(
-                height: 300,
-                width: 300,
-                padding: EdgeInsets.all(25),
+                height: 64,
+                width: 64,
+                padding: EdgeInsets.all(1),
                 decoration: BoxDecoration(
                     color: Colors.redAccent,
                     boxShadow: [
@@ -28,7 +34,7 @@ class MyApp extends StatelessWidget {
                           blurStyle: BlurStyle.inner,
                           color: Color(0xff626060))
                     ],
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(25)),
                 // child: Text("Ashok",
                 //     style: TextStyle(
                 //         color: Colors.white,
@@ -37,7 +43,7 @@ class MyApp extends StatelessWidget {
                 child: Icon(
                   Icons.favorite,
                   color: Colors.white,
-                  size: 64,
+                  size: 48,
                 ))),
       ),
     );
