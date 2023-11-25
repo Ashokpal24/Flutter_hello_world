@@ -23,28 +23,25 @@ class MyApp extends StatelessWidget {
               ),
               backgroundColor: Colors.grey,
             ),
-            body: GridView.builder(
-                itemCount: 64,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4),
-                itemBuilder: (context, index) => Container(
-                      width: 64,
-                      height: 64,
-                      decoration: BoxDecoration(
-                          color: Colors.redAccent,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                                // blurRadius: 10,
-                                offset: Offset(0.0, 1.0),
-                                color: Colors.grey)
-                          ]),
-                      margin: EdgeInsets.all(2),
-                      child: Icon(
-                        Icons.favorite,
-                        size: 48,
-                        color: Colors.white,
-                      ),
-                    ))));
+            body: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  height: 300,
+                  width: 300,
+                  color: Colors.deepPurple,
+                ),
+                Container(
+                  height: 200,
+                  width: 200,
+                  color: Colors.deepPurple[400],
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.deepPurple[200],
+                ),
+              ],
+            )));
   }
 }
