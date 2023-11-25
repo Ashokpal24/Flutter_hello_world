@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,10 +23,28 @@ class MyApp extends StatelessWidget {
               ),
               backgroundColor: Colors.grey,
             ),
-            body: ListView.builder(
-                itemCount: names.length,
-                itemBuilder: (context, index) => ListTile(
-                      title: Text(names[index]),
+            body: GridView.builder(
+                itemCount: 64,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4),
+                itemBuilder: (context, index) => Container(
+                      width: 64,
+                      height: 64,
+                      decoration: BoxDecoration(
+                          color: Colors.redAccent,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                // blurRadius: 10,
+                                offset: Offset(0.0, 1.0),
+                                color: Colors.grey)
+                          ]),
+                      margin: EdgeInsets.all(2),
+                      child: Icon(
+                        Icons.favorite,
+                        size: 48,
+                        color: Colors.white,
+                      ),
                     ))));
   }
 }
