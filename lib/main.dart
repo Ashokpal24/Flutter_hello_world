@@ -9,43 +9,35 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text(
-            "My App",
-            style: TextStyle(
-                color: Colors.white70,
-                fontSize: 32,
-                fontWeight: FontWeight.bold),
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            title: Text(
+              "My App",
+              style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold),
+            ),
+            backgroundColor: Colors.grey,
           ),
-          backgroundColor: Colors.grey,
-        ),
-        body: Center(
-            child: Container(
-                height: 64,
-                width: 64,
-                padding: EdgeInsets.all(1),
-                decoration: BoxDecoration(
-                    color: Colors.redAccent,
-                    boxShadow: [
-                      BoxShadow(
-                          offset: Offset(0.0, 2.0),
-                          blurRadius: 1.0,
-                          blurStyle: BlurStyle.inner,
-                          color: Color(0xff626060))
-                    ],
-                    borderRadius: BorderRadius.circular(25)),
-                // child: Text("Ashok",
-                //     style: TextStyle(
-                //         color: Colors.white,
-                //         fontSize: 28,
-                //         fontWeight: FontWeight.bold)),
-                child: Icon(
-                  Icons.favorite,
-                  color: Colors.white,
-                  size: 48,
-                ))),
-      ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                  child: Container(
+                color: Colors.deepPurple,
+              )),
+              Expanded(
+                  flex: 3,
+                  child: Container(
+                    color: Colors.deepPurple[400],
+                  )),
+              Expanded(
+                  child: Container(
+                color: Colors.deepPurple[200],
+              ))
+            ],
+          )),
     );
   }
 }
