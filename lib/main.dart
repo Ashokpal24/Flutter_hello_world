@@ -9,14 +9,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.blue[100],
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text("My App Bar"),
+          backgroundColor: Colors.greenAccent,
+        ),
         body: Center(
             child: Container(
                 height: 300,
                 width: 300,
                 padding: EdgeInsets.all(25),
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey,
+                    color: Colors.redAccent,
+                    boxShadow: [
+                      BoxShadow(
+                          offset: Offset(0.0, 2.0),
+                          blurRadius: 1.0,
+                          blurStyle: BlurStyle.inner,
+                          color: Color(0xff626060))
+                    ],
                     borderRadius: BorderRadius.circular(20)),
                 // child: Text("Ashok",
                 //     style: TextStyle(
@@ -24,7 +35,7 @@ class MyApp extends StatelessWidget {
                 //         fontSize: 28,
                 //         fontWeight: FontWeight.bold)),
                 child: Icon(
-                  Icons.favorite_border,
+                  Icons.favorite,
                   color: Colors.white,
                   size: 64,
                 ))),
