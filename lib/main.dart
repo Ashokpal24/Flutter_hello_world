@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  List names = ["Ash", "James", "Drax"];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,22 +22,10 @@ class MyApp extends StatelessWidget {
               ),
               backgroundColor: Colors.grey,
             ),
-            body: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                Container(
-                  width: 250,
-                  color: Colors.deepPurple,
-                ),
-                Container(
-                  width: 350,
-                  color: Colors.deepPurple[400],
-                ),
-                Container(
-                  width: 350,
-                  color: Colors.deepPurple[200],
-                )
-              ],
-            )));
+            body: ListView.builder(
+                itemCount: names.length,
+                itemBuilder: (context, index) => ListTile(
+                      title: Text(names[index]),
+                    ))));
   }
 }
